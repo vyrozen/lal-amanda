@@ -12,6 +12,33 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
   const [userData, setUserData] = useState<DocumentData | null>(null);
+  const lirikSorai = [
+    "Langit dan laut saling membantu",
+    "Mencipta awan hujan pun turun",
+    "Ketika dunia saling membantu",
+    "Lihat cinta mana yang tak jadi satu",
+    "",
+    "Kau memang manusia sedikit kata",
+    "Bolehkah aku yang berbicara",
+    "Kau memang manusia tak kasat rasa",
+    "Biar aku yang mengemban cinta",
+    "",
+    "Awan dan alam saling bersentuh (bersentuh)",
+    "Mencipta hangat kau pun tersenyum",
+    "Ketika itu kulihat syahdu",
+    "Lihat hati mana yang tak akan jatuh",
+    "",
+    "Kau memang manusia sedikit kata",
+    "Bolehkah aku yang berbicara",
+    "Kau memang manusia tak kasat rasa",
+    "Biar aku yang mengemban cinta",
+    "",
+    "Kau dan aku saling membantu",
+    "Membasuh hati yang pernah pilu",
+    "Mungkin akhirnya tak jadi satu",
+    "Namun bersorai pernah bertemu",
+  ];
+
   const route = useRouter();
   useEffect(() => {
     const handleFetchData = async () => {
@@ -106,8 +133,8 @@ export default function Home() {
         scrollTrigger: {
           trigger: ".first-out",
           once: true,
-          // markers: true,
-          start: "top+=50% 50%",
+          markers: true,
+          start: "top 50%",
           end: "bottom 75%",
         },
       }
@@ -172,7 +199,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative z-0 font-sans items-center justify-items-center min-h-screen gap-16">
+    <div className="relative z-0 font-sans items-center justify-items-center min-h-screen gap-16 w-screen overflow-clip">
       <section className="flex bg-amber-100 h-screen w-screen items-center justify-center">
         <div className="text-center">
           <h1 className="text-5xl font-brown-sugar font-bold text-gray-950">Laras Amanda</h1>
@@ -228,9 +255,10 @@ export default function Home() {
             bukan di waktu yang tepat.
           </p>
           <p className="text-content">
-            Kamu itu... Keras kepala. Meyakinimu setelah menerima suratmu untuk yang pertama kalinya adalah hal yang sulit bagiku. Untukku,
-            memahami mu seperti sebuah rekayasa teknik – teknik yang rumus-rumusnya harus aku ciptakan sendiri. Mungkin aku yang terlalu
-            sederhana dan naif untuk memahami cara mencintaimu. Layaknya seorang filsuf yang tengah mencoba membuktikan keberadaan Tuhan.
+            <span className="font-bold">Kamu itu... Keras kepala.</span> Meyakinimu setelah menerima suratmu untuk yang pertama kalinya
+            adalah hal yang sulit bagiku. Untukku, memahami mu seperti sebuah rekayasa teknik – teknik yang rumus-rumusnya harus aku
+            ciptakan sendiri. Mungkin aku yang terlalu sederhana dan naif untuk memahami cara mencintaimu. Layaknya seorang filsuf yang
+            tengah mencoba membuktikan keberadaan Tuhan.
           </p>
           <p className="text-content">
             Aku benci ketika aku harus membuatmu melupakan semua cerita manis yang pernah kita ukir sebelumnya. Aku benci ketika aku harus
@@ -240,17 +268,18 @@ export default function Home() {
             sekian kalinya. Aku benci harus belajar lagi untuk menerima keadaan.
           </p>
           <p className="text-content">
-            27 Agustus 2025. Hal yang sama terjadi lagi. Aku selalu mempertanyakan kepada diriku, kenapa kau berbuat demikian? Bukannya udah
-            pernah janji? Maafkan aku yang telah mengingkari janji itu, dan sudah memperlakukanmu tidak semestinya.
+            <span className="font-bold">27 Agustus 2025.</span> Hal yang sama terjadi lagi. Aku selalu mempertanyakan kepada diriku, kenapa
+            kau berbuat demikian? Bukannya udah pernah janji? Maafkan aku yang telah mengingkari janji itu, dan sudah memperlakukanmu tidak
+            semestinya.
           </p>
           <p className="text-content">
-            Kehilanganmu? Meskipun eksistensimu di dunia ini masih ada, rasanya seperti dulu ketika aku mendengar nada dering telfon di pagi
-            hari untuk menerima kabar kepergian mendiang Ayahku. Pagi hari ku rasanya aneh, hampa.
+            <span className="font-bold">Kehilanganmu?</span> Meskipun eksistensimu di dunia ini masih ada, rasanya seperti dulu ketika aku
+            mendengar nada dering telfon di pagi hari untuk menerima kabar kepergian mendiang Ayahku. Pagi hari ku rasanya aneh, hampa.
           </p>
           <p className="text-content">
-            Egois? Sepertinya begitu. Aku belum pernah rasanya sehaus ini untuk berusaha tetap memiliki. Aku benci untuk mengatakan ini tapi
-            aku yakin diriku masih mau untuk selalu jadi lebih baik untukmu. Itulah sebabnya aku selalu enggan menerima pamitmu. Aku belum
-            pernah seberjuang ini untuk selalu mempertahankan apa yang sudah ku bangun.
+            <span className="font-bold">Egois?</span> Sepertinya begitu. Aku belum pernah rasanya sehaus ini untuk berusaha tetap memiliki.
+            Aku benci untuk mengatakan ini tapi aku yakin diriku masih mau untuk selalu jadi lebih baik untukmu. Itulah sebabnya aku selalu
+            enggan menerima pamitmu. Aku belum pernah seberjuang ini untuk selalu mempertahankan apa yang sudah ku bangun.
           </p>
           <p className="text-content">
             Yas, aku tahu kamu sudah memilih dirimu sendiri. Aku bangga kamu masih bisa menjadi dirimu sendiri bahkan dikala aku sudah mulai
@@ -264,7 +293,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-black flex items-center justify-center h-[30vh] w-screen text-white"></section>
+      <section className="bg-black flex items-center justify-center h-[60vh] w-screen text-white"></section>
 
       <section className="bg-black flex items-center justify-center min-h-screen w-screen text-white first-out">
         <div className="px-8 text-slate-50 font-cmunrm space-y-8 text-xl">
@@ -274,8 +303,17 @@ export default function Home() {
             dan rasa kasih sayangmu yang tidak akan pernah bisa aku lupakan. Sungguh aku seorang manusia yang merugi telah menyia-nyiakan
             semua itu.
           </p>
+          <h1>
+            {lirikSorai.map((line, index) => (
+              <p key={index} className="text-content">
+                {line.trim() === "" ? "\u00A0" : line}
+              </p>
+            ))}
+          </h1>
         </div>
       </section>
+
+      <section className="bg-black flex items-center justify-center h-[50vh] w-screen text-white"></section>
 
       <section className="bg-black flex items-center justify-center min-h-screen w-screen text-white">
         <div className="px-8 text-slate-50 font-corsiva-monotype space-y-8 text-3xl">
@@ -301,7 +339,7 @@ export default function Home() {
         <div className="px-8 text-slate-50 space-y-4 text-3xl">
           <h1 className="text-center font-cmunrm text-xl font-bold">DEMON SLAYER -KIMETSU NO YAIBA- THE MOVIE: INFINITY CASTLE</h1>
           <Image src="/poster.jpeg" width={1080} height={1920} className="scale-75 rounded-4xl" alt="Poster Movie" />
-          <p className="font-corsiva-monotype text-2xl">Sunday, 31 August 2025. at CGV Jwalk Mall</p>
+          <p className="font-corsiva-monotype text-2xl">Sunday, 31 August 2025 06:00 pm. at CGV Jwalk Mall</p>
           <p className="font-cmunrm text-xl">Nonton bareng yuk?</p>
           <div className="font-cmunrm text-xl gap-x-4 flex">
             <button
