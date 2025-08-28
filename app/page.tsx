@@ -133,7 +133,7 @@ export default function Home() {
         scrollTrigger: {
           trigger: ".first-out",
           once: true,
-          markers: true,
+          // markers: true,
           start: "top 50%",
           end: "bottom 75%",
         },
