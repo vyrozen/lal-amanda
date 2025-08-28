@@ -1,6 +1,43 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+
+const brwnSgr = localFont({
+  src: "../components/fonts/brown-sugar.ttf",
+  variable: "--font-brown-sugar",
+});
+
+const cmusrf = localFont({
+  src: "../components/fonts/cmunrm.ttf",
+  variable: "--font-cmusrf",
+});
+
+const kenao = localFont({
+  src: "../components/fonts/Kenao.otf",
+  variable: "--font-kenao",
+});
+
+const handsome = localFont({
+  src: "../components/fonts/handsome.otf",
+  variable: "--font-handsome",
+});
+
+const corsivaMonotype = localFont({
+  src: [
+    {
+      path: "../components/fonts/Monotype-Corsiva-Regular-Italic.ttf",
+      style: "italic",
+      weight: "400",
+    },
+    {
+      path: "../components/fonts/Monotype-Corsiva-Regular.ttf",
+      style: "normal",
+      weight: "400",
+    },
+  ],
+  variable: "--font-corsiva-monotype",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${brwnSgr.variable} ${cmusrf.variable} ${kenao.variable} ${corsivaMonotype.variable} ${handsome.variable} antialiased`}
       >
         {children}
       </body>
